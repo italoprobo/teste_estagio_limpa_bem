@@ -5,7 +5,7 @@ O LIMPA-BEM é um aplicativo web para gerenciamento de serviços de limpeza.
 
 Instalação
 Clone o repositório do projeto do GitHub em seu computador. Para isso, abra o terminal (ou prompt de comando) e digite o seguinte comando:
-git clone https://github.com/<seu-nome-de-usuario>/<nome-do-repositorio>.git
+git clone https://github.com/seu-nome-de-usuario/nome-do-repositorio.git
 Substitua <seu-nome-de-usuario> pelo seu nome de usuário no GitHub e <nome-do-repositorio> pelo nome do repositório que você clonou.
 
 Instale as dependências do projeto. Para isso, navegue até a pasta do projeto clonado e digite o seguinte comando:
