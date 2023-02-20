@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Lista de funcionarios cadastrados</h1>
+	<ul>
+	{% for funcionario in funcionarios %}
+		<li>
+            Nome: {{ funcionario.nome }} - Tipo: {{ funcionario.tipo }}
+            <a href="{% url 'editar_funcionario' funcionario.pk %}">Editar</a>
+			
+        </li>
+	{% endfor %}
+	</ul>
+{% endblock %}

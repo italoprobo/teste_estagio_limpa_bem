@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Adicionar Serviço</h1>
+    <form method="post">
+    {% csrf_token %}
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome">
+      <br>
+      <label for="valor">Valor::</label>
+      <input type="number" name="valor" id="valor">
+      <br>
+      <input type="submit" value="Adicionar">
+    </form>
+{% endblock %}

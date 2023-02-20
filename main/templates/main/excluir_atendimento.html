@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h2>Excluir Atendimento</h2>
+<p>Tem certeza que deseja excluir o atendimento de {{ atendimento.cliente }} do dia {{ atendimento.data|date:"d/m/Y" }}?</p>
+<form method="POST" action="{% url 'excluir_atendimento' atendimento_id=atendimento.id %}">
+  {% csrf_token %}
+  <button type="submit">Confirmar</button>
+  <a href="{% url 'listar_atendimentos' %}">Cancelar</a>
+</form>
+{% endblock %}
+
+
+

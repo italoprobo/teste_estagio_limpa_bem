@@ -1,0 +1,56 @@
+{% extends "main/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Login</h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form}}
+        <p>Não possui uma conta? <a href="/register/">Crie uma aqui</a></p>
+        <button type="submit" class="btn btn-sucess">Logar</button>
+    </form>
+    <style>
+        h1  {
+          text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}

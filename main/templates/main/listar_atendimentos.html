@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Lista de atendimentos realizados</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Serviço</th>
+          <th>Atendente</th>
+          <th>Helper</th>
+          <th>Valor</th>
+          <th>Desconto</th>
+          <th>Forma de pagamento</th>
+          <th>Data de cadastro</th>
+          <th>Data de execução</th>
+          <th>Situação</th>
+          <th>Cliente</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for atendimento in atendimentos %}
+          <tr>
+            <td>{{ atendimento.id }}</td>
+            <td>{{ atendimento.servico.nome }}</td>
+            <td>{{ atendimento.atendente.nome }}</td>
+            <td>{{ atendimento.helper.nome }}</td>
+            <td>{{ atendimento.valor }}</td>
+            <td>{{ atendimento.desconto }}</td>
+            <td>{{ atendimento.forma_pagamento }}</td>
+            <td>{{ atendimento.data_cadastro }}</td>
+            <td>{{ atendimento.data_execucao }}</td>
+            <td>{{ atendimento.situacao }}</td>
+            <td>{{ atendimento.cliente.nome }}</td>
+            <td>{{ atendimento.cliente.telefone }}</td>
+            <td>{{ atendimento.cliente.endereco }}</td>
+            <td><a href="{% url 'editar_atendimento' atendimento.pk %}">Editar</a></td>
+            <td><a href="{% url 'excluir_atendimento' atendimento.pk %}">Remover</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

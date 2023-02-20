@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>Lista de clientes cadastrados</h1>
+	<ul>
+	{% for cliente in clientes %}
+		<li>
+            Nome: {{ cliente.nome }} - Telefone: {{ cliente.telefone }} - Endereço: {{ cliente.endereco }}
+            <a href="{% url 'editar_cliente' cliente.pk %}">Editar</a>
+        </li>
+	{% endfor %}
+	</ul>
+{% endblock %}
